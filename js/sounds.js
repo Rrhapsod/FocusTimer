@@ -20,7 +20,7 @@ export default function () {
     somChuva.pause();
     somCafeteria.pause();
     somLareira.pause();
-    volArvore.addEventListener("mousemove", setVolume(somFloresta, volArvore));
+    volArvore.addEventListener("input", setVolume(somFloresta, volArvore));
   }
 
   function playChuva() {
@@ -28,7 +28,7 @@ export default function () {
     somChuva.play();
     somCafeteria.pause();
     somLareira.pause();
-    volChuva.addEventListener("mousemove", setVolume(somChuva, volChuva));
+    volChuva.addEventListener("input", setVolume(somChuva, volChuva));
   }
 
   function playCafeteria() {
@@ -37,7 +37,7 @@ export default function () {
     somCafeteria.play();
     somLareira.pause();
     volCafeteria.addEventListener(
-      "mousemove",
+      "input",
       setVolume(somCafeteria, volCafeteria)
     );
   }
@@ -47,7 +47,7 @@ export default function () {
     somChuva.pause();
     somCafeteria.pause();
     somLareira.play();
-    volLareira.addEventListener("mousemove", setVolume(somLareira, volLareira));
+    volLareira.addEventListener("input", setVolume(somLareira, volLareira));
   }
 
   return {
