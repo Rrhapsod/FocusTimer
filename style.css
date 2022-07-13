@@ -163,3 +163,10 @@ input[type="range"]::-moz-range-thumb {
     top: 3rem;
   }
 }
+
+@media (max-height: 780px) {
+
+  .conteudo {
+    margin-top: 6rem;
+  }
+}
