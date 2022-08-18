@@ -19,31 +19,30 @@ export default function Styles({
   }
 
   function florestaClicked() {
+    removeStyles();
     btnFloresta.classList.add("clicked");
-    btnChuva.classList.remove("clicked");
-    btnCafeteria.classList.remove("clicked");
-    btnLareira.classList.remove("clicked");
   }
 
   function chuvaClicked() {
-    btnFloresta.classList.remove("clicked");
+    removeStyles();
     btnChuva.classList.add("clicked");
-    btnCafeteria.classList.remove("clicked");
-    btnLareira.classList.remove("clicked");
   }
 
   function cafeteriaClicked() {
-    btnFloresta.classList.remove("clicked");
-    btnChuva.classList.remove("clicked");
+    removeStyles();
     btnCafeteria.classList.add("clicked");
-    btnLareira.classList.remove("clicked");
   }
 
   function lareiraClicked() {
+    removeStyles();
+    btnLareira.classList.add("clicked");
+  }
+
+  function removeStyles() {
     btnFloresta.classList.remove("clicked");
     btnChuva.classList.remove("clicked");
     btnCafeteria.classList.remove("clicked");
-    btnLareira.classList.add("clicked");
+    btnLareira.classList.remove("clicked");
   }
 
   return {
@@ -53,5 +52,6 @@ export default function Styles({
     chuvaClicked,
     cafeteriaClicked,
     lareiraClicked,
+    removeStyles,
   };
 }

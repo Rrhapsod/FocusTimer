@@ -154,19 +154,18 @@ input[type="range"]::-moz-range-thumb {
   }
 
   #lua {
-    right: 3.5rem;
-    top: 3.5rem;
+    right: 2.5rem;
+    top: 2.5rem;
   }
 
   #sol {
-    right: 3rem;
-    top: 3rem;
+    right: 2rem;
+    top: 2rem;
   }
 }
 
-@media (max-height: 780px) {
-
+@media (max-height: 750px) {
   .conteudo {
-    margin-top: 6rem;
+    margin-top: 8rem;
   }
 }

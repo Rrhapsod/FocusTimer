@@ -1,4 +1,4 @@
-export default function Clock({ disMinutos, disSegundos }) {
+export default function Clock({ disMinutos, disSegundos}) {
   let timerTimeOut;
   let minutos;
   let segundos;

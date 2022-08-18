@@ -14,19 +14,19 @@ import Clock from "./clock.js";
 import Sounds from "./sounds.js";
 
 const styles = Styles({
-    btnSol,
-    btnLua,
-    btnFloresta,
-    btnChuva,
-    btnCafeteria,
-    btnLareira
-})
+  btnSol,
+  btnLua,
+  btnFloresta,
+  btnChuva,
+  btnCafeteria,
+  btnLareira,
+});
 
 const clock = Clock({
   disMinutos,
-  disSegundos
-})
+  disSegundos,
+});
 
-const sounds = Sounds()
+const sounds = Sounds();
 
-Events({styles, clock, sounds})
+Events({ styles, clock, sounds });

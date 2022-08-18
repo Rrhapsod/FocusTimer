@@ -11,6 +11,9 @@ import {
   btnStop,
 } from "./elements.js";
 
+let isClicked = false;
+let timerClicked = false;
+
 export default function ({ styles, clock, sounds }) {
   btnSol.addEventListener("click", function () {
     styles.activeDark();
@@ -21,38 +24,72 @@ export default function ({ styles, clock, sounds }) {
   });
 
   btnPlay.addEventListener("click", function () {
-    clock.countdown();
-  })
+    if (!timerClicked) {
+      timerClicked = true;
+      clock.countdown();
+    }
+  });
 
   btnStop.addEventListener("click", function () {
-    clock.hold()
-  })
+    if (timerClicked) {
+      timerClicked = false;
+      clock.hold();
+    }
+  });
 
   btnMais.addEventListener("click", function () {
-    clock.maisMinutos()
-  })
+    clock.maisMinutos();
+  });
 
   btnMenos.addEventListener("click", function () {
-    clock.menosMinutos()
-  })
+    clock.menosMinutos();
+  });
 
   btnFloresta.addEventListener("click", function () {
-    styles.florestaClicked();
-    sounds.playFloresta()
+    if (isClicked) {
+      styles.removeStyles();
+      sounds.stopSounds();
+      isClicked = false;
+    } else {
+      styles.florestaClicked();
+      sounds.playFloresta();
+      isClicked = true;
+    }
   });
 
   btnChuva.addEventListener("click", function () {
-    styles.chuvaClicked();
-    sounds.playChuva()
+    if (isClicked) {
+      styles.removeStyles();
+      sounds.stopSounds();
+      isClicked = false;
+    } else {
+      styles.chuvaClicked();
+      sounds.playChuva();
+      isClicked = true;
+    }
   });
 
   btnCafeteria.addEventListener("click", function () {
-    styles.cafeteriaClicked();
-    sounds.playCafeteria()
+    if (isClicked) {
+      styles.removeStyles();
+      sounds.stopSounds();
+      isClicked = false;
+    } else {
+      styles.cafeteriaClicked();
+      sounds.playCafeteria();
+      isClicked = true;
+    }
   });
 
   btnLareira.addEventListener("click", function () {
-    styles.lareiraClicked();
-    sounds.playLareira()
+    if (isClicked) {
+      styles.removeStyles();
+      sounds.stopSounds();
+      isClicked = false;
+    } else {
+      styles.lareiraClicked();
+      sounds.playLareira();
+      isClicked = true;
+    }
   });
 }

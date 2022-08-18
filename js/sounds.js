@@ -5,6 +5,7 @@ export default function () {
   const somChuva = new Audio("audios/Chuva.wav");
   const somCafeteria = new Audio("audios/Cafeteria.wav");
   const somLareira = new Audio("audios/Lareira.wav");
+  const kitchenTimer = new Audio("audios/kitchentimer.mp3");
 
   somFloresta.loop = true;
   somChuva.loop = true;
@@ -16,26 +17,20 @@ export default function () {
   }
 
   function playFloresta() {
+    stopSounds();
     somFloresta.play();
-    somChuva.pause();
-    somCafeteria.pause();
-    somLareira.pause();
     volArvore.addEventListener("input", setVolume(somFloresta, volArvore));
   }
 
   function playChuva() {
-    somFloresta.pause();
+    stopSounds();
     somChuva.play();
-    somCafeteria.pause();
-    somLareira.pause();
     volChuva.addEventListener("input", setVolume(somChuva, volChuva));
   }
 
   function playCafeteria() {
-    somFloresta.pause();
-    somChuva.pause();
+    stopSounds();
     somCafeteria.play();
-    somLareira.pause();
     volCafeteria.addEventListener(
       "input",
       setVolume(somCafeteria, volCafeteria)
@@ -43,11 +38,20 @@ export default function () {
   }
 
   function playLareira() {
+    stopSounds();
+    somLareira.play();
+    volLareira.addEventListener("input", setVolume(somLareira, volLareira));
+  }
+
+  function stopSounds() {
     somFloresta.pause();
     somChuva.pause();
     somCafeteria.pause();
-    somLareira.play();
-    volLareira.addEventListener("input", setVolume(somLareira, volLareira));
+    somLareira.pause();
+  }
+
+  function playTimer() {
+    kitchenTimer.play();
   }
 
   return {
@@ -55,5 +59,7 @@ export default function () {
     playChuva,
     playCafeteria,
     playLareira,
+    stopSounds,
+    playTimer,
   };
 }
