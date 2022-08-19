@@ -1,4 +1,5 @@
-export default function Clock({ disMinutos, disSegundos}) {
+
+export default function Clock({ disMinutos, disSegundos, sounds}) {
   let timerTimeOut;
   let minutos;
   let segundos;
@@ -9,6 +10,7 @@ export default function Clock({ disMinutos, disSegundos}) {
       segundos = Number(disSegundos.textContent);
 
       if (segundos == 0 && minutos == 0) {
+        sounds.playTimer()
         hold();
         return;
       }
