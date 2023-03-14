@@ -6,13 +6,13 @@ export default function Styles({
   btnCafeteria,
   btnLareira,
 }) {
-  const activeDark = () => {
+  const activeDark = function () {
     document.body.classList.add("dark");
     btnLua.classList.add("dark");
     btnSol.classList.add("dark");
   };
 
-  const desactiveDark = () => {
+  const desactiveDark = function () {
     document.body.classList.remove("dark");
     btnLua.classList.remove("dark");
     btnSol.classList.remove("dark");
