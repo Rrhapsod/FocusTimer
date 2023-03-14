@@ -27,7 +27,7 @@ const sounds = Sounds();
 const clock = Clock({
   disMinutos,
   disSegundos,
-  sounds
+  sounds,
 });
 
 Events({ styles, clock, sounds });

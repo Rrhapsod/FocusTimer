@@ -1,16 +1,15 @@
-
-export default function Clock({ disMinutos, disSegundos, sounds}) {
+export default function Clock({ disMinutos, disSegundos, sounds }) {
   let timerTimeOut;
   let minutos;
   let segundos;
 
-  function countdown() {
+  const countdown = () => {
     timerTimeOut = setTimeout(function () {
       minutos = Number(disMinutos.textContent);
       segundos = Number(disSegundos.textContent);
 
       if (segundos == 0 && minutos == 0) {
-        sounds.playTimer()
+        sounds.playTimer();
         hold();
         return;
       }
@@ -26,13 +25,13 @@ export default function Clock({ disMinutos, disSegundos, sounds}) {
         countdown();
       }
     }, 1000);
-  }
+  };
 
-  function hold() {
+  const hold = () => {
     clearTimeout(timerTimeOut);
-  }
+  };
 
-  function maisMinutos() {
+  const maisMinutos = () => {
     minutos = Number(disMinutos.textContent) + 5;
 
     if (minutos >= 60) {
@@ -40,17 +39,15 @@ export default function Clock({ disMinutos, disSegundos, sounds}) {
     }
 
     disMinutos.textContent = String(minutos).padStart(2, "0");
-  }
+  };
 
-  function menosMinutos() {
+  const menosMinutos = () => {
     minutos = Number(disMinutos.textContent) - 5;
 
-    if (minutos < 0) {
-      minutos = 0;
-    }
+    minutos = Math.max(minutos, 0);
 
     disMinutos.textContent = String(minutos).padStart(2, "0");
-  }
+  };
 
   return {
     countdown,

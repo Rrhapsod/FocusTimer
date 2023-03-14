@@ -12,47 +12,47 @@ export default function () {
   somCafeteria.loop = true;
   somLareira.loop = true;
 
-  function setVolume(som, volume) {
+  const setVolume = (som, volume) => {
     som.volume = volume.value / 10;
-  }
+  };
 
-  function playFloresta() {
+  const playFloresta = () => {
     stopSounds();
     somFloresta.play();
     volArvore.addEventListener("input", setVolume(somFloresta, volArvore));
-  }
+  };
 
-  function playChuva() {
+  const playChuva = () => {
     stopSounds();
     somChuva.play();
     volChuva.addEventListener("input", setVolume(somChuva, volChuva));
-  }
+  };
 
-  function playCafeteria() {
+  const playCafeteria = () => {
     stopSounds();
     somCafeteria.play();
     volCafeteria.addEventListener(
       "input",
       setVolume(somCafeteria, volCafeteria)
     );
-  }
+  };
 
-  function playLareira() {
+  const playLareira = () => {
     stopSounds();
     somLareira.play();
     volLareira.addEventListener("input", setVolume(somLareira, volLareira));
-  }
+  };
 
-  function stopSounds() {
+  const stopSounds = () => {
     somFloresta.pause();
     somChuva.pause();
     somCafeteria.pause();
     somLareira.pause();
-  }
+  };
 
-  function playTimer() {
+  const playTimer = () => {
     kitchenTimer.play();
-  }
+  };
 
   return {
     playFloresta,

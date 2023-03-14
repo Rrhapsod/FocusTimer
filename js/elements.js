@@ -10,10 +10,10 @@ const btnFloresta = document.querySelector("#arvore");
 const btnChuva = document.querySelector("#chuva");
 const btnCafeteria = document.querySelector("#cafeteria");
 const btnLareira = document.querySelector("#lareira");
-const volArvore = document.querySelector("#volArvore")
-const volChuva = document.querySelector("#volChuva")
-const volCafeteria = document.querySelector("#volCafe")
-const volLareira = document.querySelector("#volLareira")
+const volArvore = document.querySelector("#volArvore");
+const volChuva = document.querySelector("#volChuva");
+const volCafeteria = document.querySelector("#volCafe");
+const volLareira = document.querySelector("#volLareira");
 
 export {
   btnSol,
@@ -31,5 +31,5 @@ export {
   volArvore,
   volChuva,
   volCafeteria,
-  volLareira
+  volLareira,
 };
