@@ -22,12 +22,12 @@ const styles = Styles({
   btnLareira,
 });
 
-const sounds = Sounds();
-
 const clock = Clock({
   disMinutos,
   disSegundos,
   sounds,
 });
+
+const sounds = Sounds();
 
 Events({ styles, clock, sounds });
